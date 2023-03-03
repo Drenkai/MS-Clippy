@@ -17,6 +17,17 @@ MS Clippy is an OBS Studio script that records a timestamp to a file when a desi
 2. Press the hotkey assigned to the "MS Clippy" action to record a timestamp and save a clip to the replay buffer.
 3. The elapsed time since the start of the stream/recording session and the clip name (if replay is enabled) will be logged to the timestamp log file specified in the settings.
 
+## Output
+```
+Recording started on 2023-03-02 at 23:32:48
+ Time: 0:00:02 | Clip: Replay 2023-03-02 23-29-51.mkv
+ Time: 0:00:37 | Clip: Replay 2023-03-02 23-32-58.mkv
+ Time: 0:00:39 | Clip: Replay 2023-03-02 23-33-27.mkv
+
+Recording started on 2023-03-02 at 23:33:30
+ Time: 0:53:15
+ ```
+
 ## Troubleshooting
 
 - If the script is not working, make sure it is enabled in the "Scripts" window.
