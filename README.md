@@ -1,13 +1,13 @@
-# Stream Clippy
+# MS Clippy
 
-Stream Clippy is an OBS Studio script that records a timestamp to a file when a designated hotkey is pressed and saves a clip with the replay buffer. This is useful for keeping track of important moments during a live stream or recording session.
+MS Clippy is an OBS Studio script that records a timestamp to a file when a designated hotkey is pressed and saves a clip with the replay buffer. This is useful for keeping track of important moments during a live stream or recording session.
 
 ## Setup
 
-1. Download the `stream_clippy.py` file from the repository.
+1. Download the `MS_Clippy.py` file from the repository.
 2. In OBS Studio, go to "Tools" -> "Scripts" -> "Python Scripts" and click the "+" button.
-3. Select the `stream_clippy.py` file and click "Open".
-4. In the "Scripts" window, double-click the "Stream Clippy" script to open the settings.
+3. Select the `MS_Clippy.py` file and click "Open".
+4. In the "Scripts" window, click the "MS Clippy" script to open the settings.
 5. Choose a file path for the timestamp log file. This is where the script will save the timestamps and clip names.
 6. Assign a hotkey for the "MS Clippy" action. This will trigger the timestamp recording and clip saving.
 
