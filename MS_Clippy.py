@@ -14,7 +14,7 @@ def on_event(event):
     elif event in (obs.OBS_FRONTEND_EVENT_STREAMING_STOPPING, obs.OBS_FRONTEND_EVENT_RECORDING_STOPPING):
         create_log_directory()
         with open(file_path, "a") as f:  # Open the log file for appending
-            f.write(f"\n")  # Write the start time to the log file
+            f.write(f"\n")  # Add a space between recording outputs
 
 def update():
     update.current_time += 1  # Increment the elapsed time by 1 second
@@ -27,7 +27,7 @@ def key_pressed(pressed):
         time_str = f"{hours:02}:{minutes:02}:{seconds:02}"  # Format the elapsed time as a string (HH:MM:SS)
         obs.script_log(obs.LOG_INFO, f"Recording timecode: {time_str}")  # Log the elapsed time to the OBS log
         if obs.obs_frontend_replay_buffer_active():  # If the replay buffer is active, save a clip
-            obs.obs_frontend_replay_buffer_save()
+            obs.obs_frontend_replay_buffer_save() # Save the clip
             clip_name = get_last_replay_filename() # Get the clip name
             recording_time = f"{recording_time} | Clip: {clip_name}"
         # Record the file name and recording time to the text file
