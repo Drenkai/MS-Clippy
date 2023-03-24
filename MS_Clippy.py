@@ -1,6 +1,7 @@
 import obspython as obs  # Import the required OBS Python module
 import datetime  # Import the datetime module to work with dates and times
 import os  # Import the os module to work with files and directories
+import winsound # Import for feedback sound
 
 def on_event(event):
     # If streaming or recording starts, reset the elapsed time to 0 and log the start time to a file
@@ -34,6 +35,7 @@ def key_pressed(pressed):
         create_log_directory()
         with open(file_path, "a") as f:  # Open the log file for appending
             f.write(f" Time: {recording_time}\n")  # Write the elapsed time (as a timedelta object) to the log file
+        winsound.PlaySound('C:\\Windows\\Media\\Speech Sleep.wav', winsound.SND_FILENAME) # Play sound for feedback
 
 def create_log_directory():
     if not os.path.exists(os.path.dirname(file_path)):  # If the directory for the log file doesn't exist, create it
