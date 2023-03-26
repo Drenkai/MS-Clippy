@@ -37,7 +37,7 @@ def key_pressed(pressed):
             f.write(f" Time: {recording_time}\n")  # Write the elapsed time (as a timedelta object) to the log file
         if os.name == 'nt':
             today = datetime.date.today()
-            if today.month == 3 and today.day == 26:
+            if today.month == 4 and today.day == 1:
                 winsound.PlaySound('C:\\Windows\\Media\\Windows Hardware Remove.wav', winsound.SND_FILENAME) # Play sound for feedback
             else:
                 winsound.PlaySound('C:\\Windows\\Media\\Speech Sleep.wav', winsound.SND_FILENAME) # Play sound for feedback
