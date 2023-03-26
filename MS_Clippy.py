@@ -35,7 +35,12 @@ def key_pressed(pressed):
         create_log_directory()
         with open(file_path, "a") as f:  # Open the log file for appending
             f.write(f" Time: {recording_time}\n")  # Write the elapsed time (as a timedelta object) to the log file
-        winsound.PlaySound('C:\\Windows\\Media\\Speech Sleep.wav', winsound.SND_FILENAME) # Play sound for feedback
+        if os.name == 'nt':
+            today = datetime.date.today()
+            if today.month == 3 and today.day == 26:
+                winsound.PlaySound('C:\\Windows\\Media\\Windows Hardware Remove.wav', winsound.SND_FILENAME) # Play sound for feedback
+            else:
+                winsound.PlaySound('C:\\Windows\\Media\\Speech Sleep.wav', winsound.SND_FILENAME) # Play sound for feedback
 
 def create_log_directory():
     if not os.path.exists(os.path.dirname(file_path)):  # If the directory for the log file doesn't exist, create it
