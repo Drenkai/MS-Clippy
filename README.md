@@ -35,3 +35,4 @@ Recording started on 2023-03-02 at 23:33:30
 - If the script is enabled but still not working, try restarting OBS Studio.
 - If the script is still not working, check the OBS Studio log for error messages.
 - If you encounter any issues or have any suggestions for improvement, please create an issue on the GitHub repository.
+- Currently for Windows only
