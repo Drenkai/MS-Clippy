@@ -8,8 +8,9 @@ MS Clippy is an OBS Studio script that records a timestamp to a file when a desi
 2. In OBS Studio, go to "Tools" -> "Scripts" -> "Python Scripts" and click the "+" button.
 3. Select the `MS_Clippy.py` file and click "Open".
 4. In the "Scripts" window, click the "MS Clippy" script to open the settings.
-5. Choose a file path for the timestamp log file. This is where the script will save the timestamps and clip names.
-6. Assign a hotkey for the "MS Clippy" action. This will trigger the timestamp recording and clip saving.
+5. Choose a file for the timestamp log file. This is where the script will save the timestamps and clip names.
+6. Choose a .wav file for feedback sounds. This will tell you that the clip was taken.
+7. Assign a hotkey for the "MS Clippy" action. This will trigger the timestamp recording and clip saving.
 
 ## Usage
 

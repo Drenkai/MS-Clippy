@@ -65,8 +65,8 @@ def script_update(settings):
 
 def script_properties():
     props = obs.obs_properties_create()  # Create a properties object for the script settings
-    obs.obs_properties_add_path(props, "file_path", "File path", obs.OBS_PATH_FILE, "", "")  # Add a file path property to the settings
-    obs.obs_properties_add_path(props, "sound_path", "Feedback Sound path", obs.OBS_PATH_FILE, "", "")  # Add a feedback sound path property to the settings
+    obs.obs_properties_add_path(props, "file_path", "Timestamp File", obs.OBS_PATH_FILE, "", "")  # Add a file path property to the settings
+    obs.obs_properties_add_path(props, "sound_path", "Feedback Sound", obs.OBS_PATH_FILE, "", "")  # Add a feedback sound path property to the settings
     return props  # Return the properties object
 
 def script_description():
