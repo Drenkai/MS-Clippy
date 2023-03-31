@@ -1,7 +1,7 @@
 import obspython as obs  # Import the required OBS Python module
 import datetime  # Import the datetime module to work with dates and times
 import os  # Import the os module to work with files and directories
-import winsound # Import for feedback sound
+import winsound
 
 def on_event(event):
     # If streaming or recording starts, reset the elapsed time to 0 and log the start time to a file
@@ -36,11 +36,7 @@ def key_pressed(pressed):
         with open(file_path, "a") as f:  # Open the log file for appending
             f.write(f" Time: {recording_time}\n")  # Write the elapsed time (as a timedelta object) to the log file
         if os.name == 'nt':
-            today = datetime.date.today()
-            if today.month == 4 and today.day == 1:
-                winsound.PlaySound('C:\\Windows\\Media\\Windows Hardware Remove.wav', winsound.SND_FILENAME) # Play sound for feedback
-            else:
-                winsound.PlaySound('C:\\Windows\\Media\\Speech Sleep.wav', winsound.SND_FILENAME) # Play sound for feedback
+            winsound.PlaySound(sound_path, winsound.SND_FILENAME) # Play sound for feedback
 
 def create_log_directory():
     if not os.path.exists(os.path.dirname(file_path)):  # If the directory for the log file doesn't exist, create it
@@ -62,13 +58,15 @@ def get_last_replay():
     return path
 
 def script_update(settings):
-    global file_path
+    global file_path, sound_path
     file_path = obs.obs_data_get_string(settings, "file_path")  # Get the file path from the settings
+    sound_path = obs.obs_data_get_string(settings, "sound_path")  # Get the feedback sound path from the settings
     update.current_time = 0  # Reset the elapsed time when the settings are updated
 
 def script_properties():
     props = obs.obs_properties_create()  # Create a properties object for the script settings
     obs.obs_properties_add_path(props, "file_path", "File path", obs.OBS_PATH_FILE, "", "")  # Add a file path property to the settings
+    obs.obs_properties_add_path(props, "sound_path", "Feedback Sound path", obs.OBS_PATH_FILE, "", "")  # Add a feedback sound path property to the settings
     return props  # Return the properties object
 
 def script_description():
