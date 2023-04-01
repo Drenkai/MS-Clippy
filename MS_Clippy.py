@@ -35,7 +35,7 @@ def key_pressed(pressed):
         create_log_directory()
         with open(file_path, "a") as f:  # Open the log file for appending
             f.write(f" Time: {recording_time}\n")  # Write the elapsed time (as a timedelta object) to the log file
-        if 'sound_path' in locals():
+        if sound_path:
             winsound.PlaySound(sound_path, winsound.SND_FILENAME) # Play sound for feedback
 
 def create_log_directory():
